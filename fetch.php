@@ -1,4 +1,5 @@
 <?php
+//include 'customer.php';
 $username = 'root';
 $password = "";
 $host = "localhost";
@@ -29,6 +30,7 @@ if($connect){
         <th>customer_place</th>
         <th>phone</th>
         <th>email</th>
+        <th>operation</th>
         </tr>
         <?php
         while($rows = mysqli_fetch_assoc($result)){
@@ -39,6 +41,7 @@ if($connect){
             <td><?php echo $rows['customer_place']; ?></td>
             <td><?php echo $rows['phone'];?></td>
             <td><?php echo $rows['email']; ?></td>
+            <td><button class="btn btn-outline-danger"><a href="delete.php?c_id=<?php echo $rows['customer_id']; ?>" style="text-decoration: none;">Delete</td>
         </tr>
         <?php
         }

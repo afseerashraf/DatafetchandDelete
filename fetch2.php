@@ -4,6 +4,7 @@ $password = "";
 $host = "localhost";
 $db = "mydatabase";
 $connect = mysqli_connect($host, $username, $password, $db);
+$pdo = new PDO($connect);
 if($connect){
     $select = 'SELECT * FROM `detailes`';
     $result = mysqli_query($connect, $select);
